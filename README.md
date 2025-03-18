@@ -1,7 +1,3 @@
-Here's a **README** for your **PranX Framework** repository:
-
----
-
 # PranX Framework
 
 **PranX** is a lightweight, component-based web framework designed to simplify web development. It provides a simple and powerful way to build interactive, accessible, and responsive web applications using minimal JavaScript. The goal of PranX is to allow developers to create beautiful, performant UIs with the least amount of effort and complexity.
