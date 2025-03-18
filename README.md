@@ -141,7 +141,7 @@ PranX is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## Conclusion
+
 
 PranX is a simple and powerful framework to build web applications. It focuses on reducing complexity and allowing developers to create fast, responsive, and accessible apps with minimal effort. Whether you're building a small landing page or a full-fledged application, PranX is the perfect solution for developers who want to keep things simple while still achieving great results.
 
