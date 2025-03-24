@@ -1,155 +1,124 @@
 # PranX Framework
 
-**PranX** is a lightweight, component-based web framework designed to simplify web development. It provides a simple and powerful way to build interactive, accessible, and responsive web applications using minimal JavaScript. The goal of PranX is to allow developers to create beautiful, performant UIs with the least amount of effort and complexity.
+Welcome to **PranX**, a next-generation full-stack system that fuses design, database, and core logic into one cohesive and modular ecosystem. Built to simplify complex development while maintaining raw power under the hood, PranX aims to revolutionize how you build and scale applications.
 
-PranX focuses on a **no-JavaScript** approach for most components, giving you rich functionality with just **HTML** and **CSS**. When advanced features are needed, you can extend the framework with minimal JavaScript, allowing for a truly **modular** and **extensible** experience.
+## 🌟 What is PranX?
+PranX is a fully integrated framework designed to:
 
----
-
-## Key Features
-
-- **Lightweight & Fast**: No dependencies and no need for complex JavaScript setups.
-- **Component-Driven**: Easily integrate reusable components into your app.
-- **Mobile-First**: Components are responsive and built to work on mobile devices.
-- **Accessibility-First**: Built with **ARIA** attributes to ensure accessibility.
-- **Minimal JavaScript**: Most components work out-of-the-box with only HTML and CSS. JavaScript is optional.
-- **Easy Integration**: No need for bundlers or package managers—just link to the `pranx.min.js` and `pranx.min.css` files in your project.
-- **Modular & Extensible**: Customize and extend components with minimal code.
-- **Custom Elements**: PranX uses native custom HTML elements for clean, intuitive syntax.
+- **PranxUI**: Deliver elegant, modular, and reusable UI components.
+- **PranxQL**: Provide an English-like, database query engine that works seamlessly across MySQL, SQLite, and more.
+- **PranxDS**: Use custom tags with simple syntax like HTML for rapid development.
+- **CoreJS**: Empower developers with an advanced engine for deep-level customization.
 
 ---
 
-## Components
+## 🚀 Why PranX?
+Imagine a world where you can:
 
-PranX comes with several rich UI components to speed up your development process:
+- **Write less, do more**: Short, human-readable syntax in both UI and database.
+- **Modular Design**: Use what you need – UI, QL, or DS – independently.
+- **Built-in Power**: No need for external servers – harness built-in browser capabilities.
+- **Cross-Platform**: Works on Windows, Linux, and Android ecosystems seamlessly.
 
-- **PranX Button** (`<pranx-btn>`): Customizable buttons with labels and actions.
-- **PranX Toast** (`<pranx-toast>`): Display notifications or alerts.
-- **PranX Input** (`<pranx-input>`): Input field with support for placeholder and type attributes.
-- **PranX Select** (`<pranx-select>`): Dropdown menus for selecting options.
-- **PranX Slider** (`<pranx-slider>`): Interactive range sliders for numeric input.
-- **PranX Switch** (`<pranx-switch>`): Toggle switch for on/off states.
-- **PranX Tooltip** (`<pranx-tooltip>`): Simple tooltips for providing additional information.
-- **PranX List** (`<pranx-list>`): A list element for dynamically rendering content.
+## 📖 The Story of PranX
 
----
+It all began with a simple `.toast` component – a basic notification system. But as the ambition grew, so did the vision. We expanded from simple CSS to a fully-fledged **design system**. Then, the dream grew larger:
 
-## Getting Started
+- **PranxQL** was born – combining the best features of MySQL, SQLite, and others while allowing simple English-like queries.
+- **PranxDS** came next – with intuitive custom tags that make UI development as easy as writing HTML.
+- **CoreJS** finally unified everything – delivering an advanced yet accessible engine.
 
-### 1. Installation
+Now, **PranX** stands tall – ready to challenge giants like React, Angular, and Vue!
 
-Simply include the `pranx.min.css` and `pranx.min.js` files in your project.
+## 📦 Installation
 
-#### Download PranX
+Generate the PranX system using the provided batch script. This will create separate folders for users and developers, including full source code and documentation.
 
-You can either download the files directly from the GitHub repo or link to them via CDN.
+### 1. Clone the Repository
 
-```html
-<link rel="stylesheet" href="path/to/pranx.min.css">
-<script src="path/to/pranx.min.js"></script>
+```bash
+git clone https://github.com/yourrepo/pranx.git
+cd pranx
 ```
 
-### 2. Usage
+### 2. Run the Batch Script (Windows)
 
-Once the files are linked, you can start using the PranX components with minimal setup.
-
-#### Example: Button Component
-
-```html
-<pranx-btn label="Click Me" onclick="alert('Button clicked!')"></pranx-btn>
-```
-
-#### Example: Input Component
-
-```html
-<pranx-input placeholder="Enter your name" oninput="console.log(this.value)"></pranx-input>
-```
-
-#### Example: Toast Notification
-
-```html
-<pranx-toast message="This is a toast message!"></pranx-toast>
-```
-
-#### Example: Slider Component
-
-```html
-<pranx-slider min="0" max="100" value="50"></pranx-slider>
+```bash
+pranx_setup.bat
 ```
 
 ---
 
-## Advanced Usage
+## 🧰 Folder Structure
 
-Although most of the components are functional without JavaScript, you can extend their functionality with custom behaviors when needed.
-
-For example, you can add custom event listeners, dynamic content handling, or complex interactions with just a small amount of JavaScript.
-
-#### Example: Custom Button Click Behavior
-
-```html
-<pranx-btn id="myButton" label="Click Me"></pranx-btn>
-
-<script>
-  document.getElementById("myButton").addEventListener("click", function() {
-    alert("You clicked the button!");
-  });
-</script>
+```
+pranx/
+├── pranx-ui/       # PranX UI Components
+├── pranx-ql/       # PranX Query Language Engine (Rust + JS)
+├── pranx-ds/       # PranX Design System
+├── core-js/        # Core Engine for Developers
+└── docs/           # Documentation for Devs & Users
 ```
 
 ---
 
-## Why Choose PranX?
+## 🛠️ Usage
 
-1. **Simplicity**: No complex build systems or dependencies. Just simple HTML and CSS for most components.
-2. **Performance**: Lightweight, fast-loading, and designed to work well across mobile and desktop platforms.
-3. **Accessibility**: All components come with built-in accessibility features (e.g., ARIA attributes).
-4. **Flexibility**: Extend and customize components with minimal JavaScript for more advanced use cases.
-5. **Mobile-First**: All components are responsive and mobile-optimized out-of-the-box.
-6. **No JavaScript by Default**: Most of the core components work perfectly without writing a single line of JavaScript.
+1. **For Users**: Simply include the script in your HTML file:
 
----
+```html
+<script src="/pranx-ui.js"></script>
+<script src="/pranx-ql.js"></script>
+```
 
-## Roadmap
+2. **For Developers**: Modify the core using Rust or JS as per the `/core-js` folder.
 
-PranX is still evolving! Here's what you can expect in future releases:
+## 📊 Example Usage
 
-- **More UI Components**: We're continuously working on adding more components (e.g., modals, accordions, and more).
-- **Improved Documentation**: More examples and tutorials to help developers get started quickly.
-- **Cross-Browser Support**: Ensuring that PranX works seamlessly across all modern browsers.
+### PranxQL Query Example
 
----
+```html
+<px-db>
+  add user(name: 'Alice', age: 25);
+  find user where age > 20;
+</px-db>
+```
 
-## Contributing
+### PranxUI Component Example
 
-We welcome contributions from the community! Whether it’s improving the documentation, fixing bugs, or adding new components, your help is greatly appreciated.
+```html
+<pranx-toast message="Welcome to PranX!" />
+```
 
-### How to Contribute:
+### PranxDS Custom Design Example
 
-1. **Fork the repository**.
-2. **Clone** your fork to your local machine.
-3. Create a **branch** for your feature or fix.
-4. Make your changes and **commit** them.
-5. **Push** your changes to your fork.
-6. Open a **Pull Request** from your branch to the main repository.
-
----
-
-## License
-
-PranX is open-source and available under the [MIT License](LICENSE).
+```html
+<px-switch on="true" />
+```
 
 ---
 
+## 📣 Contribute
+We welcome contributions! Fork the repo, make changes, and submit a PR.
 
-
-PranX is a simple and powerful framework to build web applications. It focuses on reducing complexity and allowing developers to create fast, responsive, and accessible apps with minimal effort. Whether you're building a small landing page or a full-fledged application, PranX is the perfect solution for developers who want to keep things simple while still achieving great results.
+1. Clone the repo
+2. Make changes
+3. Submit a Pull Request
 
 ---
 
-Feel free to get started with **PranX** today and experience the simplicity of web development with minimal overhead.
+## 📜 License
+
+Licensed under the MIT License.
 
 ---
 
-**Have fun coding with PranX!**
+## 🌟 The Future of PranX
+Phase 2 and beyond will bring advanced features:
+
+- Real-time state management
+- AI-enhanced design modules
+- Enterprise-level optimizations
+
+Join the **PranX** revolution today!
 
