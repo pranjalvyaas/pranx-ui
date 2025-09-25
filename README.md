@@ -1,124 +1,341 @@
-# PranX Framework
 
-Welcome to **PranX**, a next-generation full-stack system that fuses design, database, and core logic into one cohesive and modular ecosystem. Built to simplify complex development while maintaining raw power under the hood, PranX aims to revolutionize how you build and scale applications.
 
-## 🌟 What is PranX?
-PranX is a fully integrated framework designed to:
+# PranX UI Framework 
+Welcome to **PranX UI**, a modular, lightweight web component library designed for fast development of rich web interfaces using simple HTML tags.
 
-- **PranxUI**: Deliver elegant, modular, and reusable UI components.
-- **PranxQL**: Provide an English-like, database query engine that works seamlessly across MySQL, SQLite, and more.
-- **PranxDS**: Use custom tags with simple syntax like HTML for rapid development.
-- **CoreJS**: Empower developers with an advanced engine for deep-level customization.
+***
 
----
+## Installation
 
-## 🚀 Why PranX?
-Imagine a world where you can:
-
-- **Write less, do more**: Short, human-readable syntax in both UI and database.
-- **Modular Design**: Use what you need – UI, QL, or DS – independently.
-- **Built-in Power**: No need for external servers – harness built-in browser capabilities.
-- **Cross-Platform**: Works on Windows, Linux, and Android ecosystems seamlessly.
-
-## 📖 The Story of PranX
-
-It all began with a simple `.toast` component – a basic notification system. But as the ambition grew, so did the vision. We expanded from simple CSS to a fully-fledged **design system**. Then, the dream grew larger:
-
-- **PranxQL** was born – combining the best features of MySQL, SQLite, and others while allowing simple English-like queries.
-- **PranxDS** came next – with intuitive custom tags that make UI development as easy as writing HTML.
-- **CoreJS** finally unified everything – delivering an advanced yet accessible engine.
-
-Now, **PranX** stands tall – ready to challenge giants like React, Angular, and Vue!
-
-## 📦 Installation
-
-Generate the PranX system using the provided batch script. This will create separate folders for users and developers, including full source code and documentation.
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourrepo/pranx.git
-cd pranx
-```
-
-### 2. Run the Batch Script (Windows)
-
-```bash
-pranx_setup.bat
-```
-
----
-
-## 🧰 Folder Structure
-
-```
-pranx/
-├── pranx-ui/       # PranX UI Components
-├── pranx-ql/       # PranX Query Language Engine (Rust + JS)
-├── pranx-ds/       # PranX Design System
-├── core-js/        # Core Engine for Developers
-└── docs/           # Documentation for Devs & Users
-```
-
----
-
-## 🛠️ Usage
-
-1. **For Users**: Simply include the script in your HTML file:
+Include the bundled JavaScript file in your HTML project:
 
 ```html
-<script src="/pranx-ui.js"></script>
-<script src="/pranx-ql.js"></script>
+<script src="pranx-ui.js"></script>
 ```
 
-2. **For Developers**: Modify the core using Rust or JS as per the `/core-js` folder.
+This defines all PranX UI custom elements globally.
 
-## 📊 Example Usage
+***
 
-### PranxQL Query Example
+## Components Overview
+
+### 1. Pranx Button
+
+- Usage:
+```html
+<pranx-button>Click Me</pranx-button>
+```
+- Supports `disabled` attribute and emits `pranx-click` event.
+
+***
+
+### 2. Pranx Input
+
+- Usage:
+```html
+<pranx-input placeholder="Enter text"></pranx-input>
+```
+- Supports `type`, `value`, `placeholder`, `disabled` attributes.
+- Emits `pranx-change` event on text input.
+
+***
+
+### 3. Pranx Textarea
+
+- Usage:
+```html
+<pranx-textarea rows="4" placeholder="Your message here"></pranx-textarea>
+```
+- Supports `rows`, `value`, `placeholder`, `disabled`.
+- Emits `pranx-change` event on input change.
+
+***
+
+### 4. Pranx Checkbox
+
+- Usage:
+```html
+<pranx-checkbox label="Accept terms" checked></pranx-checkbox>
+```
+- Supports `label`, `checked`, `disabled`.
+- Emits `pranx-change` event on toggle.
+
+***
+
+### 5. Pranx Radio
+
+- Usage:
+```html
+<pranx-radio name="gender" value="male" label="Male" checked></pranx-radio>
+<pranx-radio name="gender" value="female" label="Female"></pranx-radio>
+```
+- Supports `name`, `value`, `label`, `checked`, `disabled`.
+- Emits `pranx-change`.
+
+***
+
+### 6. Pranx Select
+
+- Usage:
+```html
+<pranx-select value="2">
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+</pranx-select>
+```
+- Supports `value` and `disabled`.
+- Emits `pranx-change`.
+
+***
+
+### 7. Pranx Tabs
+
+- Usage:
+```html
+<pranx-tabs>
+  <div slot="tab">Tab 1</div>
+  <div slot="tab">Tab 2</div>
+
+  <div slot="panel">
+    Content for Tab 1
+  </div>
+  <div slot="panel">
+    Content for Tab 2
+  </div>
+</pranx-tabs>
+```
+- Switches tab contents, supports keyboard navigation by default.
+
+***
+
+### 8. Pranx Accordion
+
+- Usage:
+```html
+<pranx-accordion>
+  <div class="accordion-item">
+    <div class="accordion-header">Section 1</div>
+    <div class="accordion-content">Details for section 1</div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">Section 2</div>
+    <div class="accordion-content">Details for section 2</div>
+  </div>
+</pranx-accordion>
+```
+- Collapsible content sections.
+
+***
+
+### 9. Pranx Toast
+
+- Usage:
+```html
+<pranx-toast message="Notification text"></pranx-toast>
+```
+- Displays notification for 3 seconds, then auto-dismisses.
+
+***
+
+### 10. Pranx Modal
+
+- Usage:
+```html
+<pranx-modal open>
+  <h2>Modal Title</h2>
+  <p>Modal content goes here.</p>
+</pranx-modal>
+```
+- Use `open` attribute to show or hide modal.
+
+***
+
+### 11. Pranx Tooltip
+
+- Usage:
+```html
+<pranx-tooltip text="Tooltip message" position="right">
+  <button>Hover me</button>
+</pranx-tooltip>
+```
+- Shows tooltip on hover or focus with configurable position (`top`, `bottom`, `left`, `right`).
+
+***
+
+### 12. Pranx Loader
+
+- Usage:
+```html
+<pranx-loader variant="spinner"></pranx-loader>
+<pranx-loader variant="dots"></pranx-loader>
+```
+- Spinner or dots animation, `variant` attribute controls style.
+
+***
+
+### 13. Pranx Pagination
+
+- Usage:
+```html
+<pranx-pagination current="1" total="5"></pranx-pagination>
+```
+- Displays page buttons, prev/next, and jump input.
+- Emits `pranx-page-change` with new page number.
+
+***
+
+### 14. Pranx Table
+
+- Usage:
+```html
+<pranx-table
+  columns='["Name","Age"]'
+  data='[{"Name":"Alice","Age":30},{"Name":"Bob","Age":25}]'>
+</pranx-table>
+```
+- Displays sortable table with JSON data.
+- Clicking headers sorts columns ascending/descending.
+
+***
+
+### 15. Pranx Form
+
+- Usage:
+```html
+<pranx-form>
+  <input type="text" required placeholder="Required Field">
+  <button type="submit">Submit</button>
+</pranx-form>
+```
+- Wraps native form, provides basic validation with alert on errors.
+
+***
+
+## Demo Page Example
 
 ```html
-<px-db>
-  add user(name: 'Alice', age: 25);
-  find user where age > 20;
-</px-db>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PranX UI Demo</title>
+  <script src="pranx-ui.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    section { margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>Buttons</h2>
+    <pranx-button id="btn">Click Me</pranx-button>
+  </section>
+
+  <section>
+    <h2>Inputs</h2>
+    <pranx-input placeholder="Enter your name"></pranx-input>
+    <pranx-textarea rows="3" placeholder="Your message"></pranx-textarea>
+  </section>
+
+  <section>
+    <h2>Selection</h2>
+    <pranx-checkbox label="Accept Terms" checked></pranx-checkbox><br/>
+    <pranx-radio name="gender" value="male" label="Male" checked></pranx-radio>
+    <pranx-radio name="gender" value="female" label="Female"></pranx-radio><br/>
+    <pranx-select value="2">
+      <option value="1">Option One</option>
+      <option value="2">Option Two</option>
+    </pranx-select>
+  </section>
+
+  <section>
+    <h2>Tabs</h2>
+    <pranx-tabs>
+      <div slot="tab">Tab One</div>
+      <div slot="tab">Tab Two</div>
+      <div slot="panel">Content for Tab One</div>
+      <div slot="panel">Content for Tab Two</div>
+    </pranx-tabs>
+  </section>
+
+  <section>
+    <h2>Accordion</h2>
+    <pranx-accordion>
+      <div class="accordion-item">
+        <div class="accordion-header">Section 1</div>
+        <div class="accordion-content">Details about section 1</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Section 2</div>
+        <div class="accordion-content">Details about section 2</div>
+      </div>
+    </pranx-accordion>
+  </section>
+
+  <section>
+    <h2>Toast</h2>
+    <pranx-toast message="Hello, this is a toast!"></pranx-toast>
+  </section>
+
+  <section>
+    <h2>Modal</h2>
+    <pranx-modal open>
+      <h3>Modal Title</h3>
+      <p>Some modal content.</p>
+    </pranx-modal>
+  </section>
+
+  <section>
+    <h2>Tooltip</h2>
+    <pranx-tooltip text="Tooltip info here" position="bottom">
+      <button>Hover Me</button>
+    </pranx-tooltip>
+  </section>
+
+  <section>
+    <h2>Loader</h2>
+    <pranx-loader variant="spinner"></pranx-loader>
+    <pranx-loader variant="dots"></pranx-loader>
+  </section>
+
+  <section>
+    <h2>Pagination</h2>
+    <pranx-pagination current="1" total="10"></pranx-pagination>
+  </section>
+
+  <section>
+    <h2>Table</h2>
+    <pranx-table
+      columns='["Name","Age"]'
+      data='[{"Name":"Alice","Age":30},{"Name":"Bob","Age":25}]'>
+    </pranx-table>
+  </section>
+
+  <section>
+    <h2>Form</h2>
+    <pranx-form>
+      <input type="text" required placeholder="Required field" />
+      <button type="submit">Submit</button>
+    </pranx-form>
+  </section>
+
+  <script>
+    document.getElementById('btn').addEventListener('pranx-click', () => {
+      alert('Button clicked!');
+    });
+  </script>
+
+</body>
+</html>
 ```
 
-### PranxUI Component Example
+***
 
-```html
-<pranx-toast message="Welcome to PranX!" />
-```
+## Contribution and Extending
 
-### PranxDS Custom Design Example
-
-```html
-<px-switch on="true" />
-```
-
----
-
-## 📣 Contribute
-We welcome contributions! Fork the repo, make changes, and submit a PR.
-
-1. Clone the repo
-2. Make changes
-3. Submit a Pull Request
-
----
-
-## 📜 License
-
-Licensed under the MIT License.
-
----
-
-## 🌟 The Future of PranX
-Phase 2 and beyond will bring advanced features:
-
-- Real-time state management
-- AI-enhanced design modules
-- Enterprise-level optimizations
-
-Join the **PranX** revolution today!
+- Fork the repository.
+- Add new components inside the source folder.
+- Maintain encapsulated styles and simple attribute APIs.
+- Submit Pull Requests for review.
 
