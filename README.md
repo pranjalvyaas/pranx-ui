@@ -10,7 +10,7 @@ Welcome to **PranX UI**, a modular, lightweight web component library designed f
 Include the bundled JavaScript file in your HTML project:
 
 ```html
-<script src="pranx-ui.js"></script>
+<script src="pranxui.js"></script>
 ```
 
 This defines all PranX UI custom elements globally.
